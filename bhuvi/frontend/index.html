@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BhuviTrack</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">BhuviTrack</a>
+        <div class="nav-links">
+            <a href="index.html">Dashboard</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="auth-links">
+            <a href="login.html" id="nav-login" class="btn-small">Sign In</a>
+            <a href="register.html" id="nav-register" class="btn">Register</a>
+            <button id="nav-logout" class="btn-small" style="display: none;" onclick="logout()">Logout</button>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="color: white; margin-bottom: 2rem;">Student Dashboard</h1>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+            <div class="glass-panel" style="flex: 1; min-width: 300px;">
+                <h2>Add Student</h2>
+                <form id="add-student-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required placeholder="Student Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required placeholder="Student Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="course">Course</label>
+                        <input type="text" id="course" required placeholder="Computer Science">
+                    </div>
+                    <button type="submit" class="btn">Add Student</button>
+                </form>
+            </div>
+            <div class="glass-panel" style="flex: 2; min-width: 400px;">
+                <h2>Students List</h2>
+                <div style="overflow-x: auto;">
+                    <table
+                        style="width: 100%; text-align: left; border-collapse: collapse; margin-top: 1rem; color: #ddd;">
+                        <thead>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 10px;">ID</th>
+                                <th style="padding: 10px;">Name</th>
+                                <th style="padding: 10px;">Email</th>
+                                <th style="padding: 10px;">Course</th>
+                                <th style="padding: 10px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="students-list">
+                            <tr>
+                                <td colspan="5" style="text-align: center; padding: 20px;">Loading students...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
